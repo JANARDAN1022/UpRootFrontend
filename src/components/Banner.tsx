@@ -1,39 +1,59 @@
 "use client";
 
-import { motion } from "framer-motion";
-import React from "react";
-import { AuroraBackground } from "./ui/aurora-background";
+import React from 'react';
+import { motion } from 'framer-motion';
 
-export function AuroraBackgroundDemo() {
+const Banner = () => {
   return (
-    <AuroraBackground className="min-w-full">
-      <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
-      >
-        <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
-        EXCELL YOUR
-        </div>
-        <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
-        <span className="text-palette1-primary">CAREER </span> WITH US
-        </div>
-        <div className="font-extralight text-base md:text-xl dark:text-neutral-200 ">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, itaque. 
-        </div>
-        <div className="font-extralight text-base md:text-xl dark:text-neutral-200 ">
-        Quia iste distinctio aspernatur eaque atque sit, veritatis, suscipit voluptas 
-        </div>
-        <div className="font-extralight text-base md:text-xl dark:text-neutral-200 ">
-        quas eligendi cum impedit labore nam autem tenetur, repellat laboriosam.
-       </div>
-        
-      </motion.div>
-    </AuroraBackground>
+    <div className='min-w-full bg-[#805AF5] bg-opacity-5 h-[600px] mt-2 mb-4 flex justify-center items-center relative overflow-hidden'>
+      <motion.img
+        src='/images/bg/icon-shape/icon-shape-one.png'
+        alt='animatedBgImage'
+        className='absolute w-20 h-20 left-32 top-10'
+        animate={{ x: ["-10%", "10%","-10%"] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
+       <motion.img
+        src='/images/bg/icon-shape/icon-shape-two.png'
+        alt='animatedBgImage'
+        className='absolute w-12 h-12 left-52 bottom-52'
+        animate={{ x: ["-10%", "10%","-10%"] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      />
+       <motion.img
+        src='/images/bg/icon-shape/icon-shape-three.png'
+        alt='animatedBgImage'
+        className='absolute w-20 h-20 right-32 top-10'
+        animate={{ x: ["-10%", "10%","-10%"] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+
+      />
+       <motion.img
+        src='/images/bg/icon-shape/icon-shape-four.png'
+        alt='animatedBgImage'
+        className='absolute w-20 h-20 right-52 bottom-52'
+        animate={{ x: ["-10%", "10%","-10%"] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+
+      />
+       <motion.img
+        src='/images/bg/icon-shape/icon-shape-five.png'
+        alt='animatedBgImage'
+        className='absolute w-20 h-20 left-32 top-10'
+        animate={{ x: ["-2%", "2%"] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+      />
+      <div className='w-max px-2 flex-col gap-2 text-[60px] font-bold relative '>
+        <h1>EXCELL YOUR</h1>
+        <h1><span className='text-palette1-primary'>CAREER</span> WITH US</h1>
+        <p className='text-lg font-medium  mt-4 max-w-2xl'>
+  "Empowering students to reach their career goals. Upload your resume, showcase your skills, and let us connect you with top employers looking for fresh talent. From internships to job fairs and direct hiring opportunities, we make your transition from education to employment seamless and rewarding."
+</p>
+
+
+      </div>
+    </div>
   );
-}
+};
+
+export default Banner;

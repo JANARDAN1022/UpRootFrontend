@@ -13,15 +13,15 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "./ui/navigation-menu"
-import { Button } from "./ui/button"
+} from "../ui/navigation-menu"
+import { Button } from "../ui/button"
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Upload Resume",
+    href: "/Resume",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "A Page Where You Can Upload Your Resume",
   },
   {
     title: "Hover Card",
@@ -64,8 +64,19 @@ export function NavigationMenuDemo() {
     </Link>
     <NavigationMenu className="rounded-full p-2 shadow-md ">
       <NavigationMenuList>
+        {/* Home start */}
+      <NavigationMenuItem>
+          <Link href="/" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Home
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        {/* Home end */}
+        
+        {/* Tools start */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -98,8 +109,11 @@ export function NavigationMenuDemo() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        {/* Tools End */}
+
+        {/* Pages start */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Pages</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -114,16 +128,35 @@ export function NavigationMenuDemo() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        {/* Pages End */}
+
+          {/* Roadmap start */}
         <NavigationMenuItem>
           <Link href="/docs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
+              RoadMap
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+          {/* Roadmap End */}
+
+            {/* HowTo start */}
+        <NavigationMenuItem>
+          <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              RoadMap
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+          {/* Roadmap End */}
+
+
       </NavigationMenuList>
     </NavigationMenu>
-    <Button className="bg-palette1-primary hover:bg-palette1-primary opacity-90 hover:opacity-100 transition-all ease-in-out">Sign In</Button>
+    {/* <Button className="bg-palette1-primary hover:bg-palette1-primary opacity-90 hover:opacity-100 transition-all ease-in-out">Sign In</Button> */}
+    <div className="header-btn ">
+                                <a className="rainbow-gradient-btn" target="_blank" href="text-generator.php"><span className="">Sign In</span></a>
+                            </div>
     </nav>
   )
 }

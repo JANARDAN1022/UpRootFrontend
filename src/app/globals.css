@@ -8,6 +8,55 @@ body {
 
 @layer base {
   :root {
+    /* AiWave Colors */
+    --color-primary: #805AF5;
+  --color-primary-alt: #35316f;
+  --color-secondary: #CD99FF;
+  --color-primary-gradient-start: #805AF5;
+  --color-primary-gradient-end: #CD99FF;
+  --color-heading: #ffffff;
+  --color-body: #BCC3D7;
+  --color-link: #BCC3D7;
+  --color-text-off: #565e78;
+  --color-dark: #21242D;
+  --color-darker: rgba(6, 6, 6, 0.7);
+  --color-darkest: rgba(0, 0, 0, 0.3);
+  --color-lessdark: #2E313D;
+  --color-black: #000000;
+  --color-blackest: #16181E;
+  --color-border: rgba(255,255,255,0.05);
+  --color-border-light: #e5e7eb;
+  --color-border-dark: #1E1E1E;
+  --color-bg-1: #0E0C15;
+  --color-gray: #3E414B;
+  --color-midgray: #878787;
+  --color-light: #E4E6EA;
+  --color-lighter: #CED0D4;
+  --color-lightest: #F0F2F5;
+  --color-white: #ffffff;
+  --color-white-off: rgba(255,255,255,0.05);
+  --color-success: #3EB75E;
+  --color-danger: #FF0003;
+  --color-warning: #FFC876;
+  --color-info: #1BA2DB;
+  --color-facebook: #3B5997;
+  --color-twitter: #1BA1F2;
+  --color-youtube: #ED4141;
+  --color-linkedin: #0077B5;
+  --color-pinterest: #E60022;
+  --color-instagram: #C231A1;
+  --color-vimeo: #00ADEF;
+  --color-twitch: #6441A3;
+  --color-discord: #7289da;
+  --color-extra01: #666666;
+  --color-extra02: #606770;
+  --color-extra03: #FBFBFD;
+  --color-extra04: #1A1A1A;
+  --color-extra05: #242424;
+  --color-extra06: #111424;
+
+  /*AiWave Colors End  */
+  
     --palette1-primary: 23, 100%, 65%;
     --palette1-secondary: 202, 82%, 45%;
     --palette1-accent: 22, 14%, 15%;
@@ -72,6 +121,105 @@ body {
   }
 }
 
+/* Header Button Start*/
+a.rainbow-gradient-btn,
+button.rainbow-gradient-btn,
+div.rainbow-gradient-btn {
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+}
+a.rainbow-gradient-btn span,
+button.rainbow-gradient-btn span,
+div.rainbow-gradient-btn span {
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+  z-index: 3;
+  padding: 0 30px;
+  background-color: white;
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 14px, 100% 100%, 0 100%);
+  border-radius: 2px;
+  font-size: 14px;
+  font-size: 16px;
+  font-weight: 500;
+}
+a.rainbow-gradient-btn::before, a.rainbow-gradient-btn::after,
+button.rainbow-gradient-btn::before,
+button.rainbow-gradient-btn::after,
+div.rainbow-gradient-btn::before,
+div.rainbow-gradient-btn::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.3s;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, var(--color-primary-gradient-start), var(--color-primary-gradient-end));
+  content: "";
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 14px, 100% 100%, 0 100%);
+  border-radius: 2px;
+}
+a.rainbow-gradient-btn::after,
+button.rainbow-gradient-btn::after,
+div.rainbow-gradient-btn::after {
+  background: linear-gradient(to left, var(--color-primary-gradient-start), var(--color-primary-gradient-end));
+  opacity: 0;
+  visibility: hidden;
+}
+a.rainbow-gradient-btn:hover::after,
+button.rainbow-gradient-btn:hover::after,
+div.rainbow-gradient-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+a.rainbow-gradient-btn.without-shape,
+button.rainbow-gradient-btn.without-shape,
+div.rainbow-gradient-btn.without-shape {
+  border-radius: var(--radius);
+}
+a.rainbow-gradient-btn.without-shape::before, a.rainbow-gradient-btn.without-shape::after,
+button.rainbow-gradient-btn.without-shape::before,
+button.rainbow-gradient-btn.without-shape::after,
+div.rainbow-gradient-btn.without-shape::before,
+div.rainbow-gradient-btn.without-shape::after {
+  clip-path: none;
+  border-radius: var(--radius);
+}
+a.rainbow-gradient-btn.without-shape span,
+button.rainbow-gradient-btn.without-shape span,
+div.rainbow-gradient-btn.without-shape span {
+  clip-path: none;
+  border-radius: var(--radius);
+}
+a.rainbow-gradient-btn.without-shape-circle,
+button.rainbow-gradient-btn.without-shape-circle,
+div.rainbow-gradient-btn.without-shape-circle {
+  border-radius: 100px;
+}
+a.rainbow-gradient-btn.without-shape-circle::before, a.rainbow-gradient-btn.without-shape-circle::after,
+button.rainbow-gradient-btn.without-shape-circle::before,
+button.rainbow-gradient-btn.without-shape-circle::after,
+div.rainbow-gradient-btn.without-shape-circle::before,
+div.rainbow-gradient-btn.without-shape-circle::after {
+  clip-path: none;
+  border-radius: 100px;
+}
+a.rainbow-gradient-btn.without-shape-circle span,
+button.rainbow-gradient-btn.without-shape-circle span,
+div.rainbow-gradient-btn.without-shape-circle span {
+  clip-path: none;
+  border-radius: 100px;
+  background: black;
+}
+/*Header Button End  */
+
+
+
+/*Brand Css  */
+
+/* Brand Css End */
 @layer base {
   * {
     @apply border-border;
